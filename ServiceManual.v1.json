@@ -225,16 +225,7 @@
           {
             "HTTP-Bearer": []
           }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/UserInformation"
-              }
-            }
-          }
-        }
+        ]
       },
       "parameters": [],
       "put": {
@@ -259,7 +250,16 @@
           {
             "HTTP-Bearer": []
           }
-        ]
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserInformation"
+              }
+            }
+          }
+        }
       },
       "delete": {
         "summary": "Delete user",
@@ -299,7 +299,16 @@
           {
             "HTTP-Bearer": []
           }
-        ]
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CarInformation"
+              }
+            }
+          }
+        }
       },
       "get": {
         "summary": "Get all your cars",
@@ -405,7 +414,16 @@
           {
             "HTTP-Bearer": []
           }
-        ]
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ServiceInformation"
+              }
+            }
+          }
+        }
       }
     },
     "/services/{carId}/{serviceId}": {
@@ -442,16 +460,7 @@
           {
             "HTTP-Bearer": []
           }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ServiceInformation"
-              }
-            }
-          }
-        }
+        ]
       },
       "parameters": [
         {
@@ -483,7 +492,16 @@
           {
             "HTTP-Bearer": []
           }
-        ]
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ServiceInformation"
+              }
+            }
+          }
+        }
       },
       "delete": {
         "summary": "Delete service",
