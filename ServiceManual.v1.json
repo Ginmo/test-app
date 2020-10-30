@@ -86,56 +86,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "properties": {
-                  "firstname": {
-                    "type": "string"
-                  },
-                  "lastname": {
-                    "type": "string"
-                  },
-                  "email": {
-                    "type": "string"
-                  },
-                  "phonenumber": {
-                    "type": "string"
-                  },
-                  "address": {
-                    "type": "object",
-                    "required": [
-                      "street",
-                      "city",
-                      "postcode",
-                      "country"
-                    ],
-                    "properties": {
-                      "street": {
-                        "type": "string"
-                      },
-                      "city": {
-                        "type": "string"
-                      },
-                      "postcode": {
-                        "type": "string"
-                      },
-                      "country": {
-                        "type": "string",
-                        "description": "ISO 3166"
-                      }
-                    }
-                  },
-                  "password": {
-                    "type": "string"
-                  }
-                },
-                "required": [
-                  "firstname",
-                  "lastname",
-                  "email",
-                  "phonenumber",
-                  "address",
-                  "password"
-                ]
+                "$ref": "#/components/schemas/UserInformation"
               }
             }
           },
@@ -214,7 +165,16 @@
           {
             "HTTP-Bearer": []
           }
-        ]
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CarInformation"
+              }
+            }
+          }
+        }
       },
       "delete": {
         "summary": "Delete your car",
@@ -265,7 +225,16 @@
           {
             "HTTP-Bearer": []
           }
-        ]
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserInformation"
+              }
+            }
+          }
+        }
       },
       "parameters": [],
       "put": {
@@ -473,7 +442,16 @@
           {
             "HTTP-Bearer": []
           }
-        ]
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ServiceInformation"
+              }
+            }
+          }
+        }
       },
       "parameters": [
         {
@@ -616,6 +594,9 @@
                 "description": "ISO 3166"
               }
             }
+          },
+          "password": {
+            "type": "string"
           }
         },
         "required": [
