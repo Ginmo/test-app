@@ -13,6 +13,14 @@ console.log("TEST");
 app.use('/', swaggerUi.serve, swaggerUi.setup(openApiDocumentation));
 console.log("TEST");
 
+// TEST HERE
+
+
+
+console.log("TEST");
+
+console.log("TEST");
+
 
 
 app.listen(port, () => {
