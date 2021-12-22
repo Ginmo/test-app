@@ -1,28 +1,18 @@
 const express = require('express');
+const json = require('express-json');
+const cors = require('cors');
+
 const app = express();
-port = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
+app.use(cors());
+app.use(json());
 
-const swaggerUi = require('swagger-ui-express');
-const openApiDocumentation = require('./ServiceManual.v1.json');
+app.get('/api/test', (req, res) => {
+    res.status(200).send("TEST OK");
+});
 
-// TEST HERE
+app.use(express.static("build"));
 
-
-
-console.log("TEST");
-app.use('/', swaggerUi.serve, swaggerUi.setup(openApiDocumentation));
-console.log("TEST");
-
-// TEST HERE
-
-
-
-console.log("TEST");
-
-console.log("TEST");
-
-
-
-app.listen(port, () => {
-    console.log(`Listening at http://localhost:${port}`)
+app.listen(PORT, () => {
+    console.log(`Listening on port: ${PORT}\n`);
 });
