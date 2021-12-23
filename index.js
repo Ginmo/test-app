@@ -1,14 +1,13 @@
 const express = require('express');
-const json = require('express-json');
 const cors = require('cors');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 app.use(cors());
-app.use(json());
+app.use(express.json());
 
 app.get('/api/test', (req, res) => {
-    res.status(200).send("TEST OK");
+    res.status(200).json({ test: "ok" });
 });
 
 app.use(express.static("build"));
